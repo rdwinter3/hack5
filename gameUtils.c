@@ -20,7 +20,7 @@ Move ** copyBoard(Move **board) {
       copy[i][j] = board[i][j];
     }
   }
-  return board;
+  return copy; //Returning the input instead of the copy
 }
 
 Move ** newBoard() {
@@ -112,7 +112,7 @@ Status getStatus(Move **board) {
     int i, j;
     for(i=0; i<3; i++) {
       for(j=0; j<3; j++) {
-        if(board[i][j] != O && board[i][j] != X) {
+        if(board[i][j] != O && board[i][j] != X) { //Checks all squares in which there is a square not filled by either an X or an O then it will play since the board is not filled
           s = PLAYING;
         }
       }
