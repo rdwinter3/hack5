@@ -16,7 +16,7 @@ void userMove(Move **board, Move player) {
       printf("Error: that choice was already made.\n");
     } else {
       //we map 1-9 to [0][0] thru [2][2]:
-      board[(input-1)/3][(input-1)] = player;
+      board[(input-1)/3][(input-1) % 3] = player; //Fix row to include mod 3 so that it fits the right row as without mod 3 it would fail and go to not access the correct box
       return;
     }
     input = 0;
