@@ -82,7 +82,7 @@ Status getStatus(Move **board) {
   Status s = TIE;
 
   if( //rows
-      (board[0][0] == board[0][1] && board[0][1] == board[0][2] && board[0][0] == X) || //top row for x wins
+      (board[0][0] == board[0][1] && board[0][1] == board[0][2] && board[0][0] == X) || //top row for x wins to match correct square
       (board[1][0] == board[1][1] && board[1][1] == board[1][2] && board[1][0] == X) ||
       (board[2][0] == board[2][1] && board[2][1] == board[2][2] && board[2][0] == X) ||
       //cols
@@ -112,7 +112,7 @@ Status getStatus(Move **board) {
     int i, j;
     for(i=0; i<3; i++) {
       for(j=0; j<3; j++) {
-        if(board[i][j] == O || board[i][j] == X) {
+        if(board[i][j] != O && board[i][j] != X) {
           s = PLAYING;
         }
       }
